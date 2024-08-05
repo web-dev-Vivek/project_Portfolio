@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio-Vikas Jha</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: "poppins", sans-serif;
+        }
+        :root {
+             --bg-color: #080808;
+            --second-bg-color: #131313;
+            --text-color: white;
+            --main-color:  #00ffee;
+        }
+        /*: {
+            
+           --bg-color: #f7f7f7;
+            --second-bg-color: #ececec;
+            --text-color: black;
+            --main-color:  #ff0011;
+        }*/
+
+        html {
+            font-size: 60%;
+            
+        }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 4rem 12%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+            box-shadow: 1px -1px 6pc gray;
+        }
+        .logo {
+            font-size: 3rem;
+            color: var(--text-color);
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(2.1);
+        }
+        .logo span {
+            text-shadow: 0 0 25px var(--main-color);
+        }
+        .navbar a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+        }
+        #menu-icon {
+            font-size: 3.6rem;
+            color: var(--main-color);
+            display: none;
+        }
+        section {
+            padding: 10rem 12% 10rem;
+        }
+       
+        span {
+            color: var(--main-color);
+        }
+        .home-content{
+            margin-top: 26rem;
+            display: flex;
+  justify-content: space-around;
+  align-items: center;
+        }
+        
+        .home-content h1 {
+            font-size: 7rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            line-height: 1;
+        }
+        .home-img {
+            border-radius: 50%;
+        }
+        .home-img img {
+            position: relative;
+            top: 3rem;
+            width: 32vw;
+            border-radius: 50%;
+            box-shadow: 0 0 25px var(--main-color);
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+        .home-img img:hover {
+            box-shadow: 0 0 25px var(--main-color),
+                        0 0 50px var(--main-color),
+                        0 0 100px var(--main-color);
+        }
+        .right{
+           height: 25rem;
+  width: 49rem;
+  border-left: 6px solid var(--main-color);
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 653px;
+        }
+        .left{
+            height: 25rem;
+  width: 49rem;
+  border-right: 6px solid var(--main-color);
+  margin-left: 188px;
+        }
+        .left-box{
+           height: 20rem;
+  width: 40rem;
+  border-radius: 120px;
+  box-shadow: 0px 1px 44px var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -22px;
+  border: 5px solid var(--main-color);
+        }
+        .right-box{
+           height: 20rem;
+  width: 40rem;
+  border-radius: 120px;
+  box-shadow: 0px 1px 44px var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 57px;
+  border: 5px solid var(--main-color);
+
+        }
+        .left-box p{
+            font-size: 20px;
+  margin: 0px 78px;
+        }
+        .right-box p{
+            font-size: 20px;
+  margin: 0px 75px;
+        }
+        .Education h1{
+            display: flex;
+  justify-content: center;
+  font-size: 7rem;
+  margin-top: 6rem;
+  color: var(--main-color);
+        }
+        .circle-left{
+            height: 40px;
+  width: 40px;
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  position: relative;
+  left: 448px;
+  background: var(--main-color);
+  box-shadow: 0px 0px 20px var(--main-color);
+        }
+        .circle-right{
+           height: 40px;
+  width: 40px;
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  position: relative;
+  right: 22px;
+  background: var(--main-color);
+  box-shadow: 0px 0px 20px var(--main-color);
+  top: -114px;
+
+        }
+        .date-right{
+            color: var(--text-color);
+  font-size: 31px;
+  margin-left: 57px;
+  text-shadow: 0px 0px 21px var(--text-color);
+        }
+        .date-left{
+            color: var(--text-color);
+  font-size: 31px;
+  margin-left: -94px;
+  text-shadow: 0px 0px 21px var(--text-color);
+        }
+        .right-box:hover{}
+        .still-working{
+            height: 7rem;
+  font-size: 6rem;
+  position: absolute;
+  right: 77rem;
+  top: 280rem;
+  text-shadow: 0px 0px 21px var(--main-color);
+  font-weight: bolder;
+  transition: 0.3s ease;
+        }
+        .still-working:hover{
+            transform: scale(1.5);
+        }
+        .serves1{
+            display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+    height: 33rem;
+
+        }
+        .serve1{
+            width: 66rem;
+  height: 31rem;
+  display: block;
+  border-radius: 4rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  transition: 0.3s ease;
+        }
+        .serve1:hover{
+            background: var(--text-color);
+
+        }
+        
+        .serves1 h1{
+            margin: 8rem 5rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+        }
+        .serves1 p{
+            padding: 0rem 5rem;
+        }
+        .icons{
+          display: flex;
+  margin-top: 5rem;
+  gap: 3rem;
+  text-decoration: none;
+        }
+        .icon{
+           font-size: 4rem;
+  box-shadow: 0px 0px 27px var(--main-color);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+        }
+        .icon:hover{
+            transform: scale(2);
+        }
+        .form{
+            display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 33rem;
+        }
+        .input{
+  width: 73rem;
+  height: 47rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+        .same{
+          border: 2px solid var(--main-color);
+  background: transparent;
+  height: 6rem;
+  width: 46rem;
+  border-radius: 14px;
+  color: gray;
+  padding: 21px;
+  font-size: 22px;
+
+        }
+        .submit:hover{
+            box-shadow: 0px 0px 26px var(--main-color);
+  transform: scale(1.1);
+  transition: 0.3s ease;
+        }
+        .same:hover{
+            background: var(--text-color);
+            color: black;
+            box-shadow: 0px 0px 10px var(--main-color);
+        }
+        .comment{
+            border: 2px solid var(--main-color); background: transparent; height: 26rem; width: 46rem; border-radius: 14px; color: gray; padding: 21px; font-size: 22px;
+        }
+        .comment:hover{
+              background: var(--text-color);
+            color: black;
+            box-shadow: 0px 0px 10px var(--main-color);
+        }
+        /* Ensure icons are not affected by link styles */
+.icon a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.icon {
+    font-size: 3rem;
+  box-shadow: 0px 0px 27px var(--main-color);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none; /* Ensure no underline */
+}
+
+.icon svg {
+    fill: var(--text-color); /* Default fill color for SVG */
+}
+
+.icon:hover {
+    transform: scale(1.3);
+  transition: 0.3s ease;
+}
+
+.icon:hover svg {
+    fill: var(--text-color); /* Ensure SVG fill color remains unchanged on hover */
+}
+
+        #typingEffect {
+            font-size: 40px;
+            color: var(--main-color);
+            padding-right: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline;
+            font-weight: 700;
+        }
+        #go{
+           display: inline;
+  font-size: 4rem;
+  font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div style="border-bottom: 5px solid #1a1919; height: 76rem;">
+        <div class="header">
+            <a href="#home" class="logo">VIKAS <span>JHA</span></a>
+             <span id="element"></span>
+            <box-icon name='menu' id="menu-icon"></box-icon>
+            <nav class="navbar">
+                <a href="#home" class="active" id="clickableDiv3">Home</a>
+                <a href="#education" id="clickableDiv">Education</a>
+                <a href="#service" id="clickableDiv1">Services</a>
+                <a href="#contact" id="clickableDiv2">Contacts</a>
+            </nav>
+        </div>
+        <div id="hiddenDiv3" class="home-content">
+            <div>
+                <h1>Hi, It's <span id="me">VIKAS</span></h1>
+                <div style="padding-left: 3px;
+  padding-top: 13px;"><p id="go">I'm </p><div id="typingEffect"></div></div>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="https://www.instagram.com/vijha742/" target="_blank" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>   
+                    <div class="icon">
+                         <a href="https://x.com/OTeleosis" target="_blank" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                         <a href="https://www.linkedin.com/in/vikas-jha-007b32283/" target="_blank" aria-label="Twitter">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <span class="home-img">
+                <figure>
+                     <img src="2" alt="Profile Picture"> <!--/home/vikas/Downloads/vikas_img.jpeg-->
+                    <figcaption style="position: absolute; right: 10rem; font-size: 24px;">--Vikas Jha</figcaption>
+                </figure>
+            </span>
+        </div>
+    </div>
+
+    <div id="hiddenDiv" class="hidden Education" style="height: 181rem; margin-left: 29rem;">
+        <h1 style="margin-left: -29rem;color: var(--text-color);">EDUCATION</h1>
+        <div>
+            <div class="right" style="margin-top: 10rem;">
+                <div class="circle-right"><p class="date-right">2019</p></div>
+                <div class="right-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+            <div class="left">
+                <div class="circle-left"><p class="date-left">2020</p></div>
+                <div class="left-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+            <div class="right">
+                <div class="circle-right"><p class="date-right">2021</p></div>
+                <div class="right-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+            <div class="left">
+                <div class="circle-left"><p class="date-left">2022</p></div>
+                <div class="left-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+            <div class="right">
+                <div class="circle-right"><p class="date-right">2023</p></div>
+                <div class="right-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+            <div class="left">
+                <div class="circle-left"><p class="date-left">2024</p></div>
+                <div class="left-box"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam blanditiis suscipit quod esse, laborum vero.</p></div>
+            </div>
+        </div>  
+    </div>
+
+    <div id="hiddenDiv1"  class="services" style="border-top: 6px solid #242424;">
+        <h1 style="font-size: 8rem; display: flex; justify-content: center; align-items: center; padding: 45px;">Services</h1>
+        <div class="serves1">
+            <div class="serve1" style="margin-left: 32rem;">
+                <h1>HEADING</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestias natus nam nisi cumque odit aperiam eos, quas eveniet officiis.</p>
+            </div>
+            <div class="serve1">
+                <h1>HEADING</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum debitis veniam, reiciendis quod voluptates omnis a necessitatibus doloremque recusandae, voluptas?</p>
+            </div>
+        </div>
+        <div class="serves1" style="margin-bottom: 14rem;">
+            <div class="serve1" style="margin-left: 32rem;">
+                <h1>HEADING</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nulla nesciunt nobis facilis in, asperiores fugiat mollitia alias iure reprehenderit voluptas.</p>
+            </div>
+            <div class="serve1">
+                <h1>HEADING</h1>
+                <p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Doloribus dolorem nihil reiciendis natus obcaecati quae beatae quia aperiam perferendis nam.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="hiddenDiv2" class="contact" style="border-top: 6px solid grey;">
+        <h1 style="display: flex; justify-content: center; font-size: 7rem; margin-top: 6rem;">Contact<span style="padding-left: 19px;">Me</span> </h1>
+        <form action="https://api.web3forms.com/submit" method="POST" class="form" onsubmit="return validateEmail()">
+            <div class="input" style="margin-left: 24rem; padding-left: 28rem;">
+                <input type="hidden" name="access_key" value="68a8dd0c-a726-47b5-a1d3-18776b54575d">
+                <input type="text" name="Name" class="same" placeholder="Full Name" required>
+                <input type="email" name="Gmail" id="email" class="same" placeholder="Email" required>
+                <input type="tel" name="Phone" class="same" placeholder="Phone number" required>
+                <input type="text" name="Subject" class="same" placeholder="Subject" required>
+            </div>
+            <div class="input" style="margin-left: -11rem; margin-top: 14px;">
+                <textarea name="Message" placeholder="Type Message" required class="comment"></textarea>
+                <input style="width: 10rem;
+  height: 4rem;
+  background: var(--text-color);
+  border: 3px solid var(--main-color);
+  border-radius: 2rem;" type="submit" value="Submit" class="submit">
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function validateEmail() {
+            var emailField = document.getElementById("email").value;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+            if (!emailPattern.test(emailField)) {
+                alert("Please enter a valid Gmail address.");
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('clickableDiv').addEventListener('click', function() {
+            var hiddenDiv = document.getElementById('hiddenDiv');
+            hiddenDiv.classList.toggle('hidden');
+            hiddenDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+        document.getElementById('clickableDiv1').addEventListener('click', function() {
+            var hiddenDiv = document.getElementById('hiddenDiv1');
+            hiddenDiv.classList.toggle('hidden');
+            hiddenDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+        document.getElementById('clickableDiv2').addEventListener('click', function() {
+            var hiddenDiv = document.getElementById('hiddenDiv2');
+            hiddenDiv.classList.toggle('hidden');
+            hiddenDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+        document.getElementById('clickableDiv3').addEventListener('click', function() {
+            var hiddenDiv = document.getElementById('hiddenDiv3');
+            hiddenDiv.classList.toggle('hidden');
+            hiddenDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+       
+
+        const words = ["Frontend-devop", "Freelancer", "UI/UX Designer", "Web Devloper"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        const typingSpeed = 200; // Speed of typing in milliseconds
+        const pauseBetweenWords = 1000; // Pause between words in milliseconds
+
+        function typeWord() {
+            if (charIndex < words[wordIndex].length) {
+                document.getElementById("typingEffect").innerHTML += words[wordIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWord, typingSpeed);
+            } else {
+                charIndex = 0;
+                wordIndex++;
+                if (wordIndex < words.length) {
+                    setTimeout(() => {
+                        document.getElementById("typingEffect").innerHTML = "";
+                        typeWord();
+                    }, pauseBetweenWords);
+                } else {
+                    wordIndex = 0;
+                    setTimeout(() => {
+                        document.getElementById("typingEffect").innerHTML = "";
+                        typeWord();
+                    }, pauseBetweenWords);
+                }
+            }
+        }
+
+        typeWord();
+    </script>
+ 
+
+ 
+</body>
+</body>
+</html>
